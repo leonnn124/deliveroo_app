@@ -24,6 +24,7 @@ const HomeScreen = () => {
   const [featuredCategories, setFeaturedCategories] = React.useState([]);
 
   useLayoutEffect(() => {
+    // 移除瀏海
     navigation.setOptions({
       headerShown: false,
     });
