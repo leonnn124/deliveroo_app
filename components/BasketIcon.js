@@ -3,7 +3,6 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import { selectBasketItems, selectBasketTotal } from "../features/basketSlice";
-import Currency from "react-currency-formatter";
 import * as Animatable from "react-native-animatable";
 
 const BasketIcon = () => {
@@ -33,7 +32,7 @@ const BasketIcon = () => {
           View Basket
         </Text>
         <Text className="text-lg text-white font-extrabold">
-          <Currency quantity={basketTotal} currency="TWD" />
+          $ {basketTotal}
         </Text>
       </TouchableOpacity>
     </Animatable.View>

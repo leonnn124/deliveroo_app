@@ -16,7 +16,6 @@ import {
   selectBasketTotal,
 } from "../features/basketSlice";
 import { XCircleIcon } from "react-native-heroicons/solid";
-import Currency from "react-currency-formatter";
 import { urlFor } from "../sanity";
 
 const BasketScreen = () => {
@@ -92,9 +91,7 @@ const BasketScreen = () => {
 
               <Text className="flex-1">{items[0].name}</Text>
 
-              <Text className="text-gray-600">
-                <Currency quantity={items[0].price} currency="TWD" />
-              </Text>
+              <Text className="text-gray-600">$ {items[0].price}</Text>
 
               <TouchableOpacity>
                 <Text
@@ -112,25 +109,19 @@ const BasketScreen = () => {
           <View className="flex-row justify-between">
             <Text className="text-gray-400">Subtotal</Text>
 
-            <Text className="text-gray-400">
-              <Currency quantity={basketTotal} currency="TWD" />
-            </Text>
+            <Text className="text-gray-400">$ {basketTotal}</Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text className="text-gray-400">Delivery Fee</Text>
 
-            <Text className="text-gray-400">
-              <Currency quantity={49} currency="TWD" />
-            </Text>
+            <Text className="text-gray-400">$ 49</Text>
           </View>
 
           <View className="flex-row justify-between">
             <Text>Order Total</Text>
 
-            <Text className="font-extrabold">
-              <Currency quantity={basketTotal + 49} currency="TWD" />
-            </Text>
+            <Text className="font-extrabold">$ {basketTotal + 49}</Text>
           </View>
 
           <TouchableOpacity

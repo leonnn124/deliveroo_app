@@ -1,6 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import Currency from "react-currency-formatter";
 import { urlFor } from "../sanity";
 import { MinusCircleIcon, PlusCircleIcon } from "react-native-heroicons/solid";
 import { useDispatch, useSelector } from "react-redux";
@@ -41,9 +40,7 @@ const DishRow = ({ id, name, description, price, image }) => {
 
             <Text className="text-gray-400">{description}</Text>
 
-            <Text className="text-gray-400 mt-2">
-              <Currency quantity={price} currency="TWD" />
-            </Text>
+            <Text className="text-gray-400 mt-2">$ {price}</Text>
           </View>
 
           <View className="">
